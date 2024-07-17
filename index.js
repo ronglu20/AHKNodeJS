@@ -33,6 +33,7 @@ module.exports = async function (path, hotkeysList, options) {
   function wait() {
     return new Promise(function (resolve) {
       current = resolve;
+      resolve();
     });
   }
   var current = null;
