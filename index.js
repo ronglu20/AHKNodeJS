@@ -33,7 +33,6 @@ module.exports = async function (path, hotkeysList, options) {
   function wait() {
     return new Promise(function (resolve) {
       current = resolve;
-      resolve();
     });
   }
   var current = null;
@@ -138,7 +137,6 @@ module.exports = async function (path, hotkeysList, options) {
         x.y = Math.floor((x.y / 100) * ahk.height);
       }
       runner.stdin.write(`mouseMove;${x.x};${x.y};${x.speed}\n`);
-      await wait();
     },
     /**
      * Clicks the mouse. Look at the documentation for information on parameters.
@@ -174,7 +172,6 @@ module.exports = async function (path, hotkeysList, options) {
       runner.stdin.write(
         `click;${x.x} ${x.y} ${x.button} ${x.state} ${x.count}\n`,
       );
-      await wait();
     },
     /**
      * Clicks the mouse using SendPlay. Look at the documentation for information on parameters.
